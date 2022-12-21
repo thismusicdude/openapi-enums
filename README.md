@@ -17,7 +17,7 @@ ________________________
 
 According to the OpenAPI specification, the `enum` keyword is used to specify a set of acceptable values for a parameter or property. Since the OpenAPI specification allows for the use of JSON objects to describe API operations and parameters which can include both string values and numerical values, my Team and I assumed that the `enum` keyword in the OpenAPI specification can be used also with numerical values. As written in the [JSON specification ](https://json-schema.org/understanding-json-schema/reference/generic.html?highlight=enum#enumerated-values).
 
-If you then compile this following code with the openapi-generator via openapi-generator-cli to javascript the following happens
+After we compiled this following code with the openapi-generator via openapi-generator-cli to javascript, we ran into some issues.
 
 ```yaml
 # from the File: openapi.yaml
