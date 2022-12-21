@@ -15,22 +15,25 @@ components:
     coolParameters:
       type: object
       properties:
-        firstBug:
+        firstCase:
           type: integer
           format: int32
           enum:
             - 0
-            - 25
             - 50
-            - 75
             - 100
           default: 50
-        secondBug:
+        secondCase:
           enum:
             - 5
             - "5"
           default: 5
-        thirdBug:
+        thirdCase:
+          enum:
+            - 5
+            - "5"
+          default: "5"
+        fourthCase:
           enum:
             - null
             - "null"
