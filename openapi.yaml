@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: openapi-enums
+  description: >-
+    A minimal example that shows some issues with enums by generated code in the
+    openapi-generator
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/MAX98TONTON/openapi-enums/1.0.0
+
+components:
+  schemas:
+    coolParameters:
+      type: object
+      properties:
+        #firstBug:
+        #  type: integer
+        #  format: int32
+        #  enum:
+        #    - 0
+        #    - 25
+        #    - 50
+        #    - 75
+        #    - 100
+        #  default: 50
+        secondBug:
+          enum:
+            - 5
+            - "5"
+          default: 5
+        thirdBug:
+          enum:
+            - null
+            - "null"
+          default: null
+paths:
+  /enumBug:
+    post:
+      summary: Create a new planning session
+      operationId: createSession
+      tags:
+        - Session
+      description:
+        Creates a new planning session for the referenced patient and body site. Further stateful API calls will happen in the
+        context of that session. After the session is no longer required a client needs to cancel the session.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                oneEnum:
+                  $ref: "#/components/schemas/coolParameters"
+              required:
+                - oneEnum
+      responses:
+        "200":
+          description: A JSON object describing the session
+        "400":
+          description: Missing parameters

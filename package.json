@@ -1,0 +1,29 @@
+{
+  "name": "openapi-enums",
+  "version": "1.0.0",
+  "description": "A minimal example that shows some issues with enums by generated code in the openapi-generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "generate-api": "openapi-generator-cli generate -o ./api -i ./openapi.yaml -g javascript && cd api && npm install && npm audit fix --force"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thismusicdude/openapi-enums.git"
+  },
+  "keywords": [
+    "bug",
+    "bughunting",
+    "openapi",
+    "enums"
+  ],
+  "author": "Max Schmitt - BasysKom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thismusicdude/openapi-enums/issues"
+  },
+  "homepage": "https://github.com/thismusicdude/openapi-enums#readme",
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.5.2"
+  }
+}
