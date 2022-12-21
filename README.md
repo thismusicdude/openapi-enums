@@ -2,11 +2,11 @@
 
 ## Setup & Reproduction
 
-`npm install`
+1) install dependencies with `npm install`
 
-`npm run generate-api` 
+2) generate API Code with `npm run generate-api` 
 
-or instead the following command 
+   - or instead use the following command 
 ```
 openapi-generator-cli generate -o ./api -i ./openapi.yaml -g javascript && cd api && npm install && npm audit fix --force
 ```
