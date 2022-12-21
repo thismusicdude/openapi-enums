@@ -15,16 +15,16 @@ components:
     coolParameters:
       type: object
       properties:
-        #firstBug:
-        #  type: integer
-        #  format: int32
-        #  enum:
-        #    - 0
-        #    - 25
-        #    - 50
-        #    - 75
-        #    - 100
-        #  default: 50
+        firstBug:
+          type: integer
+          format: int32
+          enum:
+            - 0
+            - 25
+            - 50
+            - 75
+            - 100
+          default: 50
         secondBug:
           enum:
             - 5
