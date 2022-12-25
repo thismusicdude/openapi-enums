@@ -129,9 +129,33 @@ thirdCase:
   - "5"
   default: "5"
 ```
-compiles, but gives the following code as result: 
+compiles, but gives the following code as result, which could lead to some issues
 
-## Case 4: forthCase
+```JavaScript
+/**
+ * Allowed values for the <code>secondCase</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+CoolParameters['thirdCaseEnum'] = {
+
+    /**
+     * value: 5
+     * @const
+     */
+    "5": 5,
+
+    /**
+     * value: 5
+     * @const
+     */
+    "5": 5
+};
+```
+
+
+## Case 4: fourthCase
+So we tried the same with `null` and `"null"`
 ```yaml
 fourthCase:
   enum:
@@ -139,7 +163,7 @@ fourthCase:
     - "null"
   default: null
 ```
-
+Which results in 
 ```javascript
 CoolParameters['FourthCaseEnum'] = {
 
