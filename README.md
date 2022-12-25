@@ -12,7 +12,7 @@ openapi-generator-cli generate -o ./api -i ./openapi.yaml -g javascript && cd ap
 ```
 
 ________________________
-
+# Bug that occurred
 ## Case 0: Bug that occurred while developing
 
 According to the OpenAPI specification, the `enum` keyword is used to specify a set of acceptable values for a parameter or property. Since the OpenAPI specification allows for the use of JSON objects to describe API operations and parameters which can include both string values and numerical values, my Team and I assumed that the `enum` keyword in the OpenAPI specification can be used also with numerical values. As written in the [JSON specification ](https://json-schema.org/understanding-json-schema/reference/generic.html?highlight=enum#enumerated-values).
@@ -83,7 +83,7 @@ CoolParameters.prototype['firstCase'] = FirstCaseEnum['50'];
 ```
 
 # Other Test Cases we experimented with
-After this incident we asked ourselves if there could be also other test-cases that could result in a similiar issue. So we defined in the included yaml file other parameters with other potential cases, that could result into errors. 
+After this incident we asked ourselves if there could be also other test-cases that could result in a similiar issue. So we defined in the included yaml file other parameters with other potential cases, that could result into issues while developing. 
 
 To get to the parameters that throw an error through babel, just comment out the various previous parameters in the yaml file that throw an error.
 
@@ -180,3 +180,4 @@ CoolParameters['FourthCaseEnum'] = {
     "null": "null"
 };
 ```
+Since there is a `null` value this could also lead to some issues. If that is not that easy fixable: maybe the code generator could throw an exception which indicates that there are duplicate values.
