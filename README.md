@@ -20,7 +20,7 @@ According to the OpenAPI specification, the `enum` keyword is used to specify a 
 After we compiled this following code with the openapi-generator via openapi-generator-cli to javascript, we ran into some issues.
 
 ```yaml
-# from the File: openapi.yaml
+# from File: openapi.yaml
 firstCase:
   type: integer
   format: int32
@@ -36,7 +36,7 @@ firstCase:
 If we now take a look into the files of the generated module, we see this code-snippet
 
 ```javascript
-// File: api/src/model/CoolParameters.js (generated)
+// from File: api/src/model/CoolParameters.js (generated)
 
 /**
  * @member {module:model/CoolParameters.FirstCaseEnum} firstCase
@@ -89,6 +89,7 @@ To get to the parameters that throw an error through babel, just comment out the
 
 ## Case 2: secondCase
 ```yaml
+# from File: openapi.yaml
 secondCase:
   enum:
   - 5
@@ -99,6 +100,8 @@ Babel throws `BABEL_PARSE_ERROR` with the code `MissingSemicolon`.
 Same error as described above. The generated code is the following:
 
 ```JavaScript
+// from File: api/src/model/CoolParameters.js (generated)
+
 /**
  * Allowed values for the <code>secondCase</code> property.
  * @enum {Number}
@@ -123,6 +126,7 @@ CoolParameters['SecondCaseEnum'] = {
 ## Case 3: thirdCase
 
 ```yaml
+# from File: openapi.yaml
 thirdCase:
   enum:
   - 5
@@ -132,6 +136,8 @@ thirdCase:
 compiles, but gives the following code as result, which could lead to some issues
 
 ```JavaScript
+// from File: api/src/model/CoolParameters.js (generated)
+
 /**
  * Allowed values for the <code>secondCase</code> property.
  * @enum {Number}
@@ -157,6 +163,7 @@ CoolParameters['thirdCaseEnum'] = {
 ## Case 4: fourthCase
 So we tried the same with `null` and `"null"`
 ```yaml
+# from File: openapi.yaml
 fourthCase:
   enum:
     - null
@@ -165,6 +172,8 @@ fourthCase:
 ```
 Which results in 
 ```javascript
+// from File: api/src/model/CoolParameters.js (generated)
+
 CoolParameters['FourthCaseEnum'] = {
 
     /**
