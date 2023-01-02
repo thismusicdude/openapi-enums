@@ -4,9 +4,11 @@
   "description": "A minimal example that shows some issues with enums by generated code in the openapi-generator",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "test",
     "generate-api": "openapi-generator-cli generate -o api -i ./openapi.yaml -g javascript && cd api && npm install && npm audit fix --force",
-    "generate-ts-api": "openapi-generator-cli generate -o api -i ./openapi.yaml -g typescript && cd api && npm install && npm audit fix --force"
+    "generate-ts-api": "openapi-generator-cli generate -o api -i ./openapi.yaml -g typescript && cd api && npm install && npm audit fix --force",
+    "workaround-api": "openapi-generator-cli generate -o api -i ./workaround.yaml -g typescript && cd api && npm install && npm run build"
   },
   "repository": {
     "type": "git",
