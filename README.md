@@ -193,4 +193,11 @@ Since there is a `null` value this could also lead to some issues. If that is no
 
 # Experiments with TypeScript Generator
 
-The TypeScript generator apparently does not compile Case 4. It looks like its because of the `null` type, which the compiler cant compile into an enum.
+The TypeScript generator apparently does not generate Case 4 and the openapi-tools code generator throws an exception. It looks like its because of the `null` type, which the compiler can't compile into an TypeScript enum.
+
+Case 1 - 3 compiles beautiful without any troubles. But there is probably no default value set (at least I didn't see where it could potentially be set). This could be the reason, why the issue of the javascript generator does not apply to the TypeScript Code.
+
+## potential workaround
+* Compile into TypeScript.
+* then compile TypeScript code into JavaScript. <br>
+NOT TESTED YET.
