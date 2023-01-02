@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "generate-api": "openapi-generator-cli generate -o ./api -i ./openapi.yaml -g javascript && cd api && npm install && npm audit fix --force"
+    "generate-api": "openapi-generator-cli generate -o api -i ./openapi.yaml -g javascript && cd api && npm install && npm audit fix --force",
+    "generate-ts-api": "openapi-generator-cli generate -o api -i ./openapi.yaml -g typescript && cd api && npm install && npm audit fix --force"
   },
   "repository": {
     "type": "git",

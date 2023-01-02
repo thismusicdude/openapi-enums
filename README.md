@@ -190,3 +190,7 @@ CoolParameters['FourthCaseEnum'] = {
 };
 ```
 Since there is a `null` value this could also lead to some issues. If that is not that easy fixable: maybe the code generator could throw an exception which indicates that there are duplicate values.
+
+# Experiments with TypeScript Generator
+
+The TypeScript generator apparently does not compile Case 4. It looks like its because of the `null` type, which the compiler cant compile into an enum.
